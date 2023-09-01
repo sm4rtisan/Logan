@@ -181,7 +181,7 @@ public class RealSendLogRunnable extends SendLogRunnable {
       Log.d("上传日志测试", "日志上传测试结果：" + data);
       if (!TextUtils.isEmpty(data)) {
         JSONObject jsonObj = new JSONObject(data);
-        if (jsonObj.optBoolean("success", false)) {
+        if (jsonObj.optInt("code", 0) == 200) {
           isSuccess = true;
         }
       }
